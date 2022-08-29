@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HangMan.MainPage">
+
+    <Grid RowDefinitions=".6*, .4*">
+        <VerticalStackLayout Margin="10">
+            <Label FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   Text="Errors 0/6"/>
+
+            <Image Source="img0" HeightRequest="200" />
+
+            <Label FontSize="Large"
+                   Margin="0,40,0,0"
+                   HorizontalTextAlignment="Center"
+                   Text="{Binding sporlight}" 
+                   VerticalTextAlignment="Center"/>
+
+            <Label Text="You Lost"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"
+                   FontSize="Large" />
+
+            <Button Text="Reset"
+                    HorizontalOptions="Center" />
+            
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>
