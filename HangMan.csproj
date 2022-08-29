@@ -49,13 +49,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\img0.svg" />
-	  <None Remove="Resources\Images\img1.svg" />
-	  <None Remove="Resources\Images\img2.svg" />
-	  <None Remove="Resources\Images\img3.svg" />
-	  <None Remove="Resources\Images\img4.svg" />
-	  <None Remove="Resources\Images\img5.svg" />
-	  <None Remove="Resources\Images\img6.svg" />
+	  <None Remove="Resources\Images\img0.png" />
+	  <None Remove="Resources\Images\img1.png" />
+	  <None Remove="Resources\Images\img2.png" />
+	  <None Remove="Resources\Images\img3.png" />
+	  <None Remove="Resources\Images\img4.png" />
+	  <None Remove="Resources\Images\img5.png" />
+	  <None Remove="Resources\Images\img6.png" />
 	</ItemGroup>
 
 	<ItemGroup>
