@@ -14,7 +14,7 @@
             <Label FontSize="Large"
                    Margin="0,40,0,0"
                    HorizontalTextAlignment="Center"
-                   Text="{Binding sporlight}" 
+                   Text="{Binding Spotlight}" 
                    VerticalTextAlignment="Center"/>
 
             <Label Text="You Lost"
