@@ -1,5 +1,4 @@
-﻿
-
+﻿using HangMan.Interfaces;
 using HangMan.Servics;
 using HangMan.ViewModes;
 
@@ -14,9 +13,11 @@ public static class MauiProgram
             fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
             fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
         });
+
         builder.Services.AddSingleton<WordService>();
         builder.Services.AddSingleton<MainPageViewModel>();
         builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<IGetWord, WordService>();
         return builder.Build();
     }
 }

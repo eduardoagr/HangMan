@@ -1,9 +1,10 @@
 ﻿using System.Net.Http.Json;
 
+using HangMan.Interfaces;
 using HangMan.Model;
 
 namespace HangMan.Servics;
-public class WordService
+public class WordService : IGetWord
 {
     readonly HttpClient client;
 
@@ -12,7 +13,7 @@ public class WordService
         client = new HttpClient();
     }
 
-    public async Task<string> GetRandomWord()
+    public async Task<string> DownloadRandomWordAsync()
     {
         var url = "https://random-words-api.vercel.app/word/";
 

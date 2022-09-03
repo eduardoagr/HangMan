@@ -1,11 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-using HangMan.Servics;
+using HangMan.Interfaces;
 
 namespace HangMan.ViewModes;
 public partial class MainPageViewModel : ObservableObject
 {
-    readonly WordService wordService;
+    readonly IGetWord getWord;
 
     string answer = string.Empty;
     readonly List<char> charList = new();
@@ -13,16 +13,17 @@ public partial class MainPageViewModel : ObservableObject
     [ObservableProperty]
     private string _spotlight;
 
-    public MainPageViewModel(WordService wordService)
+
+    public MainPageViewModel(IGetWord getWord)
     {
-        this.wordService = wordService;
-        GetWord();
-        CalculateWord(answer, charList);
+        this.getWord = getWord;
+        InitializeAsync();
     }
 
-    private async void GetWord()
+    private async Task<string> GetWord()
     {
-        answer = await wordService.GetRandomWord();
+        answer = await getWord.DownloadRandomWordAsync();
+        return answer;
     }
 
     private void CalculateWord(string ans, List<char> guessed)
@@ -31,5 +32,14 @@ public partial class MainPageViewModel : ObservableObject
         Spotlight = string.Join(' ', temp);
     }
 
+    public void InitializeAsync()
+    {
+        Task.Run(async () =>
+        {
+            answer = await GetWord();
+            CalculateWord(answer, charList);
+        });
+
+    }
 
 }
