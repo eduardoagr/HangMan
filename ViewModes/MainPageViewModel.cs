@@ -13,11 +13,16 @@ public partial class MainPageViewModel : ObservableObject
     [ObservableProperty]
     private string _spotlight;
 
+    public Task Initialization
+    {
+        get; private set;
+    }
+
 
     public MainPageViewModel(IGetWord getWord)
     {
         this.getWord = getWord;
-        InitializeAsync();
+        Initialization = InitializeAsync();
     }
 
     private async Task<string> GetWord()
@@ -32,14 +37,10 @@ public partial class MainPageViewModel : ObservableObject
         Spotlight = string.Join(' ', temp);
     }
 
-    public void InitializeAsync()
+    public async Task InitializeAsync()
     {
-        Task.Run(async () =>
-        {
-            answer = await GetWord();
-            CalculateWord(answer, charList);
-        });
-
+        answer = await GetWord();
+        CalculateWord(answer, charList);
     }
 
 }
