@@ -1,34 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HangMan.MainPage"
-             BackgroundColor="Black">
+<ContentPage
+    x:Class="HangMan.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="Black">
 
     <Grid RowDefinitions=".6*, .4*">
         <VerticalStackLayout Margin="10">
-            <Label FontAttributes="Bold"
-                   TextColor="White"
-                   HorizontalTextAlignment="Center"
-                   Text="Errors 0/6"/>
+            <Label
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                Text="Errors 0/6"
+                TextColor="White" />
 
-            <Image Source="img0.jpg" HeightRequest="200" />
+            <Image HeightRequest="200" Source="img0" />
 
-            <Label FontSize="Large"
-                   TextColor="White"
-                   Margin="0,40,0,0"
-                   HorizontalTextAlignment="Center"
-                   Text="{Binding Spotlight}" 
-                   VerticalTextAlignment="Center"/>
+            <Label
+                Margin="0,40,0,0"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                Text="{Binding Spotlight}"
+                TextColor="White"
+                VerticalTextAlignment="Center" />
 
-            <Label Text="You Lost"
-                   TextColor="White"
-                   HorizontalTextAlignment="Center"
-                   FontAttributes="Bold"
-                   FontSize="Large" />
+            <Label
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                Text="You Lost"
+                TextColor="White" />
 
-            <Button Text="Reset"
-                    HorizontalOptions="Center" />
-            
+            <Button HorizontalOptions="Center" Text="Reset" />
+
         </VerticalStackLayout>
     </Grid>
 
